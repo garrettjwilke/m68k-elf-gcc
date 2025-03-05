@@ -64,7 +64,7 @@ export PATH=$INSTALL_DIR/bin:$PATH
 if [ ${BUILD_BINUTILS} == "yes" ]; then
     ./build-binutils.sh
     if [ $? -ne 0 ]; then
-        "Failed to build binutils, please check build.log"
+        echo "Failed to build binutils, please check build.log"
         exit 1
     fi
 fi
@@ -73,7 +73,7 @@ fi
 if [ ${BUILD_GCC_STAGE_1} == "yes" ]; then
     ./build-gcc.sh
     if [ $? -ne 0 ]; then
-        "Failed to build gcc stage 1, please check build.log"
+        echo "Failed to build gcc stage 1, please check build.log"
         exit
     fi
 fi
@@ -82,14 +82,14 @@ fi
 if [ ${BUILD_NEWLIB} == "yes" ]; then
     ./build-newlib.sh
     if [ $? -ne 0 ]; then
-        "Failed to build newlib, please check build.log"
+        echo "Failed to build newlib, please check build.log"
         exit
     else
         # Build GCC stage 2 (with newlib)
         if [ ${BUILD_GCC_STAGE_2} == "yes" ]; then
             ./build-gcc.sh
             if [ $? -ne 0 ]; then
-                "Failed to build gcc stage 2, please check build.log"
+                echo "Failed to build gcc stage 2, please check build.log"
                 exit
             fi
         fi
