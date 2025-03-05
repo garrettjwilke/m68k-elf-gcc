@@ -19,7 +19,6 @@ PREFIX="m68k-elf-"
 # Check if user is root
 if [ ${EUID} == 0 ]; then
     echo "Please don't run this script as root!"
-    exit
 fi
 
 # Check all args

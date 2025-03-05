@@ -18,7 +18,6 @@ DIR="binutils-${VERSION}"
 # Check if user is root
 if [ ${EUID} == 0 ]; then
     echo "Please don't run this script as root"
-    exit 1
 fi
 
 # Create build folder
